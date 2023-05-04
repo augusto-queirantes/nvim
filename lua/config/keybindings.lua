@@ -49,3 +49,7 @@ map_key("n", "<C-j>", "<C-W>j")
 map_key("n", "<C-k>", "<C-W>k")
 map_key("n", "<C-h>", "<C-W>h")
 map_key("n", "<C-l>", "<C-W>l")
+
+-- Movement between buffers
+map_key("n", "<leader>j", ":bp<CR>")
+map_key("n", "<leader>l", ":bn<CR>")
