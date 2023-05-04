@@ -1,12 +1,12 @@
 require("plugins.coc")
-require("plugins.nvim-tree-config")
+require("plugins.nvim_tree_config")
 
 return require("packer").startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
   -- Colorscheme
-  use { "ellisonleao/gruvbox.nvim" }
+  use "Mofiqul/dracula.nvim"
 
   -- Coc
   use {

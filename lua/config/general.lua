@@ -45,11 +45,3 @@ vim_options.clipboard = "unnamedplus"
 
 global_variables.mapleader = " "
 global_variables.maplocalleader = " "
-
-
---
--- Plugins
---
-
-vim_options.background = "dark"
-vim.cmd([[colorscheme gruvbox]])
