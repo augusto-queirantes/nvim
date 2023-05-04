@@ -35,6 +35,9 @@ map_key("n", "===", "mxgg=G`x")
 -- Ctrl-a
 map_key("n", "<C-a>", "ggvG")
 
+-- Source vim configurations
+map_key("n", "<leader>so", ":so<cr>")
+
 -- Move entire line of text
 map_key("n", "<M-j>", "mz:m+<cr>`z")
 map_key("n", "<M-k>", "mz:m-2<cr>`z")
@@ -46,17 +49,3 @@ map_key("n", "<C-j>", "<C-W>j")
 map_key("n", "<C-k>", "<C-W>k")
 map_key("n", "<C-h>", "<C-W>h")
 map_key("n", "<C-l>", "<C-W>l")
-
---
--- Plugins related shortcuts
---
-
--- Nerdtree
-map_key("n", "<leader>ff", ":NvimTreeFindFile<cr>")
-
--- Telescope
-map_key("n", "<C-p>", "<cmd>Telescope find_files<cr>")
-
--- COC
-map_key("i", "<TAB>", "<C-n>")
-map_key("i", "<S-TAB>", "<C-p>")
