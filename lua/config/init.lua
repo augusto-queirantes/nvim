@@ -1,0 +1,3 @@
+require("config.general")
+require("config.text")
+require("config.keybindings")

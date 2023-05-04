@@ -52,7 +52,7 @@ map_key("n", "<C-l>", "<C-W>l")
 --
 
 -- Nerdtree
-map_key("n", "<leader>ff", ":NERDTreeFind<cr>")
+map_key("n", "<leader>ff", ":NvimTreeFindFile<cr>")
 
 -- FZF
 map_key("n", "<C-p>", ":Files<cr>")

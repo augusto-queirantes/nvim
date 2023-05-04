@@ -1,4 +1,2 @@
-require("config.general")
-require("config.text")
-require("config.keybindings")
-require("config.plugins")
+require("config.init")
+require("plugins.init")
