@@ -10,7 +10,7 @@ return require("packer").startup(function(use)
   -- Nvim tree
   use {
     'nvim-tree/nvim-tree.lua',
-      requires = {
+    requires = {
       'nvim-tree/nvim-web-devicons', -- optional
     },
     config = function()
@@ -35,4 +35,9 @@ return require("packer").startup(function(use)
 
   -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } }
+
+  use {
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
 end)
