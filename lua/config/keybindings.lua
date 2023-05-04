@@ -54,8 +54,8 @@ map_key("n", "<C-l>", "<C-W>l")
 -- Nerdtree
 map_key("n", "<leader>ff", ":NvimTreeFindFile<cr>")
 
--- FZF
-map_key("n", "<C-p>", ":Files<cr>")
+-- Telescope
+map_key("n", "<C-p>", "<cmd>Telescope find_files<cr>")
 
 -- COC
 map_key("i", "<TAB>", "<C-n>")

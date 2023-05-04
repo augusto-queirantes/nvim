@@ -7,3 +7,6 @@ mv *.ttf /usr/share/fonts/
 rm LICENSE.md
 rm readme.md
 rm Hack.zip
+
+# RipGrep
+sudo apt-get install -y ripgrep

@@ -1,5 +1,5 @@
 require("plugins.coc")
-require("plugins.nvim-tree")
+require("plugins.nvim-tree-config")
 
 return require("packer").startup(function(use)
   -- Packer can manage itself
@@ -9,8 +9,12 @@ return require("packer").startup(function(use)
   use { "ellisonleao/gruvbox.nvim" }
 
   -- Coc
-  use {'neoclide/coc.nvim', branch = 'release'}
+  use {
+    'neoclide/coc.nvim',
+    branch = 'release'
+  }
 
+  -- Nvim tree
   use {
     'nvim-tree/nvim-tree.lua',
     requires = {
@@ -19,5 +23,17 @@ return require("packer").startup(function(use)
     config = function()
       require("nvim-tree").setup {}
     end
+  }
+
+  -- Telescope
+  use {
+    'nvim-telescope/telescope.nvim',
+    tag = '0.1.1',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
+  use {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    run = 'make'
   }
 end)
