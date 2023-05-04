@@ -18,7 +18,7 @@ map_key("n", "<C-s>", ":w!<cr>")
 
 -- Split
 map_key("n", "<leader>vs", ":vsplit<cr>")
-map_key("n", "<leader>s", ":split<cr>")
+map_key("n", "<leader>hs", ":split<cr>")
 
 -- Disable search highlight
 map_key("n", "<Esc><Esc>", ":noh<cr>")
