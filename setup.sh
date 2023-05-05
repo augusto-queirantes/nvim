@@ -9,4 +9,4 @@ rm readme.md
 rm Hack.zip
 
 # Dependencies
-sudo apt-get install -y ripgrep python3-venv
+sudo apt-get install -y ripgrep python3-venv fd-find

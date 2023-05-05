@@ -16,6 +16,9 @@ map_key("n", "<C-v>", 'p"')
 -- Fast save
 map_key("n", "<C-s>", ":w!<cr>")
 
+-- Fast close
+map_key("n", "<C-q>", ":q<cr>")
+
 -- Split
 map_key("n", "<leader>vs", ":vsplit<cr>")
 map_key("n", "<leader>hs", ":split<cr>")
@@ -45,9 +48,9 @@ map_key("v", "<M-j>", ":m'>+<cr>`<my`>mzgv`yo`z")
 map_key("v", "<M-k>", ":m'<-2<cr>`>my`<mzgv`yo`z")
 
 -- Movement between splits
+map_key("n", "<C-h>", "<C-W>h")
 map_key("n", "<C-j>", "<C-W>j")
 map_key("n", "<C-k>", "<C-W>k")
-map_key("n", "<C-h>", "<C-W>h")
 map_key("n", "<C-l>", "<C-W>l")
 
 -- Movement between buffers
