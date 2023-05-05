@@ -5,13 +5,13 @@ require("plugins.fugitive")
 
 return require("packer").startup(function(use)
   -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+  use "wbthomason/packer.nvim"
 
   -- Nvim tree
   use {
-    'nvim-tree/nvim-tree.lua',
+    "nvim-tree/nvim-tree.lua",
     requires = {
-      'nvim-tree/nvim-web-devicons', -- optional
+      "nvim-tree/nvim-web-devicons", -- optional
     },
     config = function()
       require("nvim-tree").setup {}
@@ -23,21 +23,39 @@ return require("packer").startup(function(use)
 
   -- Telescope
   use {
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.1',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.1",
+    requires = { {"nvim-lua/plenary.nvim"} }
   }
 
   use {
-    'nvim-telescope/telescope-fzf-native.nvim',
-    run = 'make'
+    "nvim-telescope/telescope-fzf-native.nvim",
+    run = "make"
   }
 
   -- Treesitter
-  use { 'nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' } }
+  use { "nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" } }
 
+  -- Autopairs
   use {
     "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
+  }
+
+  -- COC
+  use {
+    "ms-jpq/coq_nvim",
+    branch = "coq",
+    event = "InsertEnter",
+    opt = true,
+    run = ":COQdeps",
+    config = function()
+      require("plugins.coq").setup()
+    end,
+    requires = {
+      { "ms-jpq/coq.artifacts", branch = "artifacts" },
+      { "ms-jpq/coq.thirdparty", branch = "3p", module = "coq_3p" },
+    },
+    disable = false,
   }
 end)

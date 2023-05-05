@@ -8,5 +8,5 @@ rm LICENSE.md
 rm readme.md
 rm Hack.zip
 
-# RipGrep
-sudo apt-get install -y ripgrep
+# Dependencies
+sudo apt-get install -y ripgrep python3-venv
