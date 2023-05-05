@@ -4,6 +4,8 @@ require("plugins.treesitter")
 require("plugins.fugitive")
 require("plugins.dracula")
 require("plugins.lualine")
+require("plugins.coq")
+require("plugins.autopairs")
 
 return require("packer").startup(function(use)
   -- Packer can manage itself
@@ -47,53 +49,12 @@ return require("packer").startup(function(use)
   use { "nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" } }
 
   -- Autopairs
-  use {
-    "windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
-  }
+  use "windwp/nvim-autopairs"
 
   -- COC
   use {
     "ms-jpq/coq_nvim",
     branch = "coq",
-    event = "InsertEnter",
-    opt = true,
-    run = ":COQdeps",
-    config = function()
-      require("plugins.coq").setup()
-    end,
-    requires = {
-      { "ms-jpq/coq.artifacts", branch = "artifacts" },
-      { "ms-jpq/coq.thirdparty", branch = "3p", module = "coq_3p" },
-    },
-    disable = false,
-  }
-
-  -- Completion
-  use {
-    "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-    opt = true,
-    config = function()
-      require("plugins.cmp").setup()
-    end,
-    wants = { "LuaSnip" },
-    requires = {
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-nvim-lua",
-      "ray-x/cmp-treesitter",
-      "hrsh7th/cmp-cmdline",
-      "saadparwaiz1/cmp_luasnip",
-      {
-        "L3MON4D3/LuaSnip",
-        wants = "friendly-snippets",
-        config = function()
-          require("plugins.luasnip").setup()
-        end,
-      },
-      "rafamadriz/friendly-snippets",
-      disable = false,
-    },
+    run = ":COQdeps"
   }
 end)
