@@ -1,11 +1,10 @@
-require("plugins.tree")
-require("plugins.telescope")
-require("plugins.treesitter")
-require("plugins.fugitive")
-require("plugins.dracula")
-require("plugins.lualine")
-require("plugins.coq")
 require("plugins.autopairs")
+require("plugins.dracula")
+require("plugins.fugitive")
+require("plugins.lualine")
+require("plugins.telescope")
+require("plugins.tree")
+require("plugins.treesitter")
 
 return require("packer").startup(function(use)
   -- Packer can manage itself
@@ -20,9 +19,6 @@ return require("packer").startup(function(use)
     requires = {
       "nvim-tree/nvim-web-devicons",
     },
-    config = function()
-      require("nvim-tree").setup {}
-    end
   }
 
   -- Status line
@@ -50,11 +46,4 @@ return require("packer").startup(function(use)
 
   -- Autopairs
   use "windwp/nvim-autopairs"
-
-  -- COC
-  use {
-    "ms-jpq/coq_nvim",
-    branch = "coq",
-    run = ":COQdeps"
-  }
 end)
