@@ -1,10 +1,13 @@
-require("plugins.autopairs")
 require("plugins.dracula")
-require("plugins.fugitive")
 require("plugins.lualine")
-require("plugins.telescope")
-require("plugins.tree")
 require("plugins.treesitter")
+require("plugins.fugitive")
+require("plugins.autopairs")
+require("plugins.tree")
+require("plugins.telescope")
+require("plugins.completion")
+require("plugins.mason")
+require("plugins.lsp")
 
 return require("packer").startup(function(use)
   -- Packer can manage itself
@@ -13,21 +16,27 @@ return require("packer").startup(function(use)
   -- Colorscheme
   use 'Mofiqul/dracula.nvim'
 
-  -- Nvim tree
-  use {
-    "nvim-tree/nvim-tree.lua",
-    requires = {
-      "nvim-tree/nvim-web-devicons",
-    },
-  }
-
   -- Status line
   use {
     'nvim-lualine/lualine.nvim',
   }
 
+  -- Treesitter
+  use { "nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" } }
+
   -- Git
   use "tpope/vim-fugitive"
+
+  -- Autopairs
+  use "windwp/nvim-autopairs"
+
+  -- Nvim tree
+  use {
+    "nvim-tree/nvim-tree.lua",
+    requires = {
+      "nvim-tree/nvim-web-devicons",
+    }
+  }
 
   -- Telescope
   use {
@@ -41,9 +50,17 @@ return require("packer").startup(function(use)
     run = "make"
   }
 
-  -- Treesitter
-  use { "nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" } }
+  -- LSP
+  use "williamboman/mason.nvim"
+  use "williamboman/mason-lspconfig.nvim"
+  use "neovim/nvim-lspconfig"
 
-  -- Autopairs
-  use "windwp/nvim-autopairs"
+  -- Completion
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/vim-vsnip'
 end)
