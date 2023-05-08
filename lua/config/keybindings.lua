@@ -15,6 +15,7 @@ map_key("v", "<C-c>", '"*y')
 map_key("v", "<C-x>", '"+c')
 
 -- Paste
+map_key("i", "<C-v>", '<C-R>"')
 map_key("v", "<C-v>", "p")
 map_key("n", "<C-v>", 'p"')
 
