@@ -2,6 +2,7 @@ require("plugins.dracula")
 require("plugins.lualine")
 require("plugins.treesitter")
 require("plugins.fugitive")
+require("plugins.vgit")
 require("plugins.autopairs")
 require("plugins.tree")
 require("plugins.telescope")
@@ -26,6 +27,7 @@ return require("packer").startup(function(use)
 
   -- Git
   use "tpope/vim-fugitive"
+  use "tanvirtin/vgit.nvim"
 
   -- Autopairs
   use "windwp/nvim-autopairs"
