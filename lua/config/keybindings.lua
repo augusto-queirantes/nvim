@@ -4,9 +4,11 @@ end
 
 -- 0 working properly
 map_key("n", "0", "^")
+map_key("v", "0", "^")
 
 -- $ working properly
 map_key("n", "$", "g_")
+map_key("v", "$", "g_")
 
 -- Copy
 map_key("v", "<C-c>", '"*y')
