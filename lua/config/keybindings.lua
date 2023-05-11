@@ -11,7 +11,7 @@ map_key("n", "$", "g_")
 map_key("v", "$", "g_")
 
 -- Copy
-map_key("v", "<C-c>", '"*y')
+map_key("v", "<C-c>", '"+y')
 
 -- Cut
 map_key("v", "<C-x>", '"+c')
