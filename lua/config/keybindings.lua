@@ -2,14 +2,6 @@ local function map_key(mode, key_to_bind, action_to_execute)
   vim.keymap.set(mode, key_to_bind, action_to_execute)
 end
 
--- 0 working properly
-map_key("n", "0", "^")
-map_key("v", "0", "^")
-
--- $ working properly
-map_key("n", "$", "g_")
-map_key("v", "$", "g_")
-
 -- Copy
 map_key("v", "<C-c>", '"+y')
 
@@ -18,8 +10,16 @@ map_key("v", "<C-x>", '"+c')
 
 -- Paste
 map_key("i", "<C-v>", '<C-R>"')
-map_key("v", "<C-v>", "p")
-map_key("n", "<C-v>", 'p"')
+map_key("v", "<C-v>", '"+p')
+map_key("n", "<C-v>", '"+p')
+
+-- 0 working properly
+map_key("n", "0", "^")
+map_key("v", "0", "^")
+
+-- $ working properly
+map_key("n", "$", "g_")
+map_key("v", "$", "g_")
 
 -- Fast save
 map_key("n", "<C-s>", ":w!<cr>")
