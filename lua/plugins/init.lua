@@ -1,6 +1,5 @@
 require("plugins.dracula")
 require("plugins.lualine")
-require("plugins.treesitter")
 require("plugins.fugitive")
 require("plugins.vgit")
 require("plugins.autopairs")
@@ -21,9 +20,6 @@ return require("packer").startup(function(use)
   use {
     'nvim-lualine/lualine.nvim',
   }
-
-  -- Treesitter
-  use { "nvim-treesitter/nvim-treesitter", { run = ":TSUpdate" } }
 
   -- Git
   use "tpope/vim-fugitive"
