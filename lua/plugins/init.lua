@@ -5,6 +5,7 @@ require("plugins.vgit")
 require("plugins.autopairs")
 require("plugins.tree")
 require("plugins.telescope")
+require("plugins.treesitter")
 require("plugins.completion")
 require("plugins.mason")
 require("plugins.lsp")
@@ -46,6 +47,11 @@ return require("packer").startup(function(use)
   use {
     "nvim-telescope/telescope-fzf-native.nvim",
     run = "make"
+  }
+
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
   }
 
   -- LSP
