@@ -1,5 +1,8 @@
 # Nvim configuration
 
+## Prerequisites
+
+1. neovim version 0.9 or higher, can't be installed using snap
 
 ## Setup
 

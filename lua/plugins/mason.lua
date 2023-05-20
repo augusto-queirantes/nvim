@@ -8,4 +8,20 @@ require("mason").setup({
   }
 })
 
-require("mason-lspconfig").setup()
+require("mason-lspconfig").setup({
+  ensure_installed = {
+    "cssls",
+    "dockerls",
+    "docker_compose_language_service",
+    "eslint",
+    "html",
+    "jsonls",
+    "tsserver",
+    "lua_ls",
+    "marksman",
+    "prismals",
+    "tailwindcss"
+  },
+
+  automatic_installation = true
+})
