@@ -9,7 +9,7 @@ local global_variables = vim.g
 vim_options.number = true
 
 -- Hiddens tabs instead of closing then
-vim_options.hiden = true
+--vim_options.hiden = true
 
 -- Allows mouse usage
 vim_options.mouse = "a"
@@ -30,8 +30,8 @@ vim_options.undofile = true
 vim_options.magic = true
 
 -- Removes annoting sounds
-vim_options.noerrorbells = true
-vim_options.novisualbell = true
+--vim_options.noerrorbells = true
+--vim_options.novisualbell = true
 
 -- Highlights current line
 vim_options.cursorline = true
