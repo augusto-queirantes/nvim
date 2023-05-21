@@ -9,7 +9,7 @@ sudo rm readme.md
 sudo rm Hack.zip
 
 # Dependencies
-sudo apt-get install -y ripgrep python3-venv fd-find software-properties-common python-dev python3-pip python3-dev python3-pip curl
+sudo apt-get install -y ripgrep python3-venv fd-find software-properties-common python-dev python3-pip python3-dev python3-pip curl httpie
 
 # Packer
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
