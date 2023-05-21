@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-1. neovim version 0.9 or higher, can't be installed using snap
+1. neovim version 0.9 or higher, can't be installed using snap. You can install it by following [this doc](https://github.com/neovim/neovim/wiki/Installing-Neovim#ubuntu)
 
 ## Setup
 
