@@ -50,11 +50,6 @@ return require("packer").startup(function(use)
     run = "make"
   }
 
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
-
   use "windwp/nvim-ts-autotag"
 
   -- LSP
