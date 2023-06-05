@@ -4,6 +4,7 @@ require("plugins.fugitive")
 require("plugins.vgit")
 require("plugins.autopairs")
 require("plugins.tree")
+require("plugins.tressitter")
 require("plugins.telescope")
 require("plugins.autotag")
 require("plugins.completion")
@@ -49,6 +50,13 @@ return require("packer").startup(function(use)
     run = "make"
   }
 
+	-- Treesitter
+	use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
+  }
+
+	-- Autotagging
   use "windwp/nvim-ts-autotag"
 
   -- LSP

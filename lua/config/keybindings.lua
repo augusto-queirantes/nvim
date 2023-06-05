@@ -47,7 +47,7 @@ map_key("n", "===", "mxgg=G`x")
 map_key("n", "<C-a>", "ggvG")
 
 -- Source vim configurations
-map_key("n", "<leader>so", ":so<cr>")
+map_key("n", "<leader>so", ":so ~/.config/nvim/init.lua<cr>")
 
 -- Move entire line of text
 map_key("n", "<M-j>", "mz:m+<cr>`z")
