@@ -17,10 +17,6 @@ cmp.setup({
       vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
     end,
   },
-  window = {
-    -- completion = cmp.config.window.bordered(),
-    -- documentation = cmp.config.window.bordered(),
-  },
   mapping = cmp.mapping.preset.insert({
     ['<C-b>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -77,9 +73,5 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 require('lspconfig')['lua_ls'].setup {
-  capabilities = capabilities
-}
-
-require('lspconfig')['solargraph'].setup {
   capabilities = capabilities
 }

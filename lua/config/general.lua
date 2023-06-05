@@ -29,6 +29,9 @@ vim_options.undofile = true
 -- Allows regex to work properly
 vim_options.magic = true
 
+-- Explicitly disables paste mode
+vim_options.paste = false
+
 -- Removes annoting sounds
 --vim_options.noerrorbells = true
 --vim_options.novisualbell = true
