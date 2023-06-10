@@ -4,6 +4,8 @@ local vim_options = vim.o
 vim_options.tabstop = 2
 vim_options.softtabstop = 2
 vim_options.shiftwidth = 2
+vim_options.expandtab = true
+vim_options.smarttab = true
 
 -- Sets line break on 1000 characters
 vim_options.lbr = true
