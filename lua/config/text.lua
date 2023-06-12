@@ -19,6 +19,3 @@ vim_options.smartindent = true
 vim_options.encoding = "utf-8"
 vim_options.fileencoding = "utf-8"
 vim_options.fileencodings = "utf-8"
-
--- Adds a vertical line on 120 characters
-vim_options.colorcolumn = 120
