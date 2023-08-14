@@ -1,4 +1,5 @@
 require("plugins.dracula")
+require("plugins.comment")
 require("plugins.lualine")
 require("plugins.fugitive")
 require("plugins.vgit")
@@ -14,6 +15,9 @@ require("plugins.lsp")
 return require("packer").startup(function(use)
   -- Packer can manage itself
   use "wbthomason/packer.nvim"
+
+  -- Comments
+  use "terrortylor/nvim-comment"
 
   -- Colorscheme
   use 'Mofiqul/dracula.nvim'
