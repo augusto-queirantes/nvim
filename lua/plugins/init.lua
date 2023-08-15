@@ -4,13 +4,9 @@ require("plugins.lualine")
 require("plugins.fugitive")
 require("plugins.vgit")
 require("plugins.autopairs")
+require("plugins.coc")
 require("plugins.tree")
-require("plugins.tressitter")
 require("plugins.telescope")
-require("plugins.autotag")
-require("plugins.completion")
-require("plugins.mason")
-require("plugins.lsp")
 
 return require("packer").startup(function(use)
   -- Packer can manage itself
@@ -54,26 +50,5 @@ return require("packer").startup(function(use)
     run = "make"
   }
 
-	-- Treesitter
-	use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
-  }
-
-	-- Autotagging
-  use "windwp/nvim-ts-autotag"
-
-  -- LSP
-  use "williamboman/mason.nvim"
-  use "williamboman/mason-lspconfig.nvim"
-  use "neovim/nvim-lspconfig"
-
-  -- Completion
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/vim-vsnip'
+  use { 'neoclide/coc.nvim', branch='release' }
 end)
