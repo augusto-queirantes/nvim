@@ -6,6 +6,7 @@ require("plugins.fugitive")
 require("plugins.lualine")
 require("plugins.telescope")
 require("plugins.tree")
+require("plugins.vgit")
 
 return require("packer").startup(function(use)
   -- Packer can manage itself
@@ -48,6 +49,14 @@ return require("packer").startup(function(use)
     "nvim-tree/nvim-tree.lua",
     requires = {
       "nvim-tree/nvim-web-devicons",
+    }
+  }
+
+  -- Vgit
+  use {
+    'tanvirtin/vgit.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim'
     }
   }
 end)
