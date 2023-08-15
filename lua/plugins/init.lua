@@ -1,41 +1,34 @@
-require("plugins.dracula")
-require("plugins.comment")
-require("plugins.lualine")
-require("plugins.fugitive")
-require("plugins.vgit")
 require("plugins.autopairs")
 require("plugins.coc")
-require("plugins.tree")
+require("plugins.comment")
+require("plugins.dracula")
+require("plugins.fugitive")
+require("plugins.lualine")
 require("plugins.telescope")
+require("plugins.tree")
 
 return require("packer").startup(function(use)
   -- Packer can manage itself
   use "wbthomason/packer.nvim"
 
+  -- Autopairs
+  use "windwp/nvim-autopairs"
+
+  -- Coc
+  use { 'neoclide/coc.nvim', branch = 'release' }
+
   -- Comments
   use "terrortylor/nvim-comment"
 
-  -- Colorscheme
+  -- Dracula
   use 'Mofiqul/dracula.nvim'
+
+  -- Fugitive
+  use "tpope/vim-fugitive"
 
   -- Status line
   use {
     'nvim-lualine/lualine.nvim',
-  }
-
-  -- Git
-  use "tpope/vim-fugitive"
-  use "tanvirtin/vgit.nvim"
-
-  -- Autopairs
-  use "windwp/nvim-autopairs"
-
-  -- Nvim tree
-  use {
-    "nvim-tree/nvim-tree.lua",
-    requires = {
-      "nvim-tree/nvim-web-devicons",
-    }
   }
 
   -- Telescope
@@ -50,5 +43,11 @@ return require("packer").startup(function(use)
     run = "make"
   }
 
-  use { 'neoclide/coc.nvim', branch='release' }
+  -- Nvim tree
+  use {
+    "nvim-tree/nvim-tree.lua",
+    requires = {
+      "nvim-tree/nvim-web-devicons",
+    }
+  }
 end)
