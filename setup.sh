@@ -2,7 +2,7 @@
 
 # Fonts
 wget https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/Hack.zip
-unzip Hack.zip 
+unzip Hack.zip
 sudo mv *.ttf /usr/share/fonts/
 sudo rm LICENSE.md
 sudo rm readme.md
@@ -20,3 +20,6 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 source ~/.bashrc
 nvm install 18
 npm install -g typescript typescript-language-server neovim
+
+# NVIM
+sudo snap install nvim --classic
