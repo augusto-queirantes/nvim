@@ -24,19 +24,20 @@ Use the following steps to configure nvim
 
 5. Disable user system colors checkbox on terminal configuration
 
-6. Open nvim
+6. Restart the computer
+
+7. Open nvim
 
 `nvim .`
 
-7. Install Dependencies
+8. Install Dependencies
 
 ```
 :PackerInstall
 :PackerSync
 ```
 
-6. Close and open nvim
-
 ## Commom problems
 
-1. You may face an error while dowloading dependencies in the first time, if it happens just close the neovim, open it again and run the commands
+1. You'll need to comment or remove every import inside `plugin/init.lua` to be able to download the packages. After the download ends, uncomment the importes to make then available.
+2. You may face an error while dowloading dependencies in the first time, if it happens just close the neovim, open it again and run the commands.
