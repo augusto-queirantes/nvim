@@ -34,14 +34,8 @@ return require("packer").startup(function(use)
 
   -- Telescope
   use {
-    "nvim-telescope/telescope.nvim",
-    tag = "0.1.1",
-    requires = { {"nvim-lua/plenary.nvim"} }
-  }
-
-  use {
-    "nvim-telescope/telescope-fzf-native.nvim",
-    run = "make"
+    'nvim-telescope/telescope.nvim', tag = '0.1.2',
+    requires = { {'nvim-lua/plenary.nvim'} }
   }
 
   -- Nvim tree
