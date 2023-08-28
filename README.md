@@ -10,7 +10,7 @@ Use the following steps to configure nvim
 
 1. Clone the repo
 
-`git clone https://github.com/augusto-queirantes/nvim.git ~/.config/nvim`
+`git clone git@github.com:augusto-queirantes/nvim.git ~/.config/nvim`
 
 2. Go to the repo folder
 
