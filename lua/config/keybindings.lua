@@ -25,7 +25,7 @@ map_key("v", "$", "g_")
 map_key("n", "<C-s>", ":w!<cr>")
 
 -- Fast close
-map_key("n", "<C-q>", ":q<cr>")
+map_key("n", "<C-q>", ":q!<cr>")
 
 -- Split
 map_key("n", "<leader>vs", ":vsplit<cr>")
