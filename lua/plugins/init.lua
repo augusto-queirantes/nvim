@@ -4,6 +4,7 @@ require("plugins.comment")
 require("plugins.dracula")
 require("plugins.fugitive")
 require("plugins.lualine")
+require("plugins.barbar")
 require("plugins.telescope")
 require("plugins.tree")
 require("plugins.vgit")
@@ -31,6 +32,9 @@ return require("packer").startup(function(use)
   use {
     'nvim-lualine/lualine.nvim',
   }
+
+  -- Tabline
+  use 'romgrk/barbar.nvim'
 
   -- Telescope
   use {
