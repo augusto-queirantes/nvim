@@ -5,9 +5,9 @@ require("plugins.dracula")
 require("plugins.fugitive")
 require("plugins.lualine")
 require("plugins.barbar")
+require("plugins.gitsigns")
 require("plugins.telescope")
 require("plugins.tree")
-require("plugins.vgit")
 
 return require("packer").startup(function(use)
   -- Packer can manage itself
@@ -33,8 +33,11 @@ return require("packer").startup(function(use)
     'nvim-lualine/lualine.nvim',
   }
 
-  -- Tabline
+  -- Barbar
   use 'romgrk/barbar.nvim'
+
+  -- Gitsigns
+  use 'lewis6991/gitsigns.nvim'
 
   -- Telescope
   use {
@@ -47,14 +50,6 @@ return require("packer").startup(function(use)
     "nvim-tree/nvim-tree.lua",
     requires = {
       "nvim-tree/nvim-web-devicons",
-    }
-  }
-
-  -- Vgit
-  use {
-    'tanvirtin/vgit.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim'
     }
   }
 end)
