@@ -19,5 +19,8 @@ vim_options.cursorline = true
 -- Allows ctrl-c usage
 vim_options.clipboard = "unnamedplus"
 
+-- Allows undo
+vim_options.undofile = true
+
 -- Leaderkey
 global_variables.mapleader = " "
