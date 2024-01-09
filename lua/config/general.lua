@@ -24,3 +24,6 @@ vim_options.undofile = true
 
 -- Leaderkey
 global_variables.mapleader = " "
+
+-- Use termguicolors
+vim_options.termguicolors = true

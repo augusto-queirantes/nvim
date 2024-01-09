@@ -41,7 +41,7 @@ map_key("v", "<tab>", ">gv")
 map_key("v", "<S-tab>", "<gv")
 
 -- Ident entire file
-map_key("n", "===", "mxgg=G`x")
+-- map_key("n", "===", "mxgg=G`x")
 
 -- Ctrl-a
 map_key("n", "<C-a>", "ggvG")

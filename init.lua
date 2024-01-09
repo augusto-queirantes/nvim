@@ -1,2 +1,5 @@
-require("config.init")
-require("plugins.init")
+require("config.general")
+require("config.text")
+require("config.keybindings")
+require("config.autocommands")
+require("config.lazy")

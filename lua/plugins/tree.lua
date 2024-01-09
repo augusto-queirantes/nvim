@@ -1,17 +1,13 @@
--- disable netrw at the very start of your init.lua (strongly advised)
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
--- set termguicolors to enable highlight groups
-vim.opt.termguicolors = true
-
-require("nvim-tree").setup({
-  renderer = {
-    highlight_git = true
-  },
-  filters = {
-    dotfiles = false,
-  },
-})
-
-vim.keymap.set("n", "<leader>ff", ":NvimTreeFindFile<cr>")
+return {
+	"nvim-neo-tree/neo-tree.nvim",
+	branch = "v3.x",
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"nvim-tree/nvim-web-devicons",
+		"MunifTanjim/nui.nvim",
+	},
+	config = function()
+		vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>", {})
+		vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", {})
+	end,
+}
