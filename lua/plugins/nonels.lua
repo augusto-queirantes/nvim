@@ -11,7 +11,6 @@ return {
 			},
 		})
 
-    -- TODO: should I add a automatic command to do this?
-		vim.keymap.set("n", "==", vim.lsp.buf.format, {})
+		vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
 	end,
 }
