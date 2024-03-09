@@ -10,13 +10,15 @@ return {
           diagnostics_update_in_insert = true,
           color_icons = true,
           show_buffer_icons = true,
-          hover = {
-            enabled = true,
-            delay = 200,
-            reveal = { "close" },
+          always_show_bufferline = false,
+          indicator = {
+            style = "underline",
           },
         },
       })
     end,
+
+    vim.keymap.set("n", "<leader>bp", ":BufferLinePick<CR>", {}),
+    vim.keymap.set("n", "<leader>bc", ":BufferLinePickClose<CR>", {}),
   },
 }
