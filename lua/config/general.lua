@@ -27,3 +27,11 @@ global_variables.mapleader = " "
 
 -- Use termguicolors
 vim_options.termguicolors = true
+
+-- Show LSP diagnostic on a floating pane instead of a inline message
+vim.diagnostic.config({
+	virtual_text = false,
+})
+
+vim.o.updatetime = 250
+vim.cmd([[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]])
