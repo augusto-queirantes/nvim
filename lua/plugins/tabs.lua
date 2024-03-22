@@ -7,6 +7,7 @@ return {
 		},
 		config = function()
 			require("bufferline").setup({
+				highlights = require("catppuccin.groups.integrations.bufferline").get(),
 				options = {
 					themable = true,
 					diagnostics = "nvim_lsp",
