@@ -1,16 +1,140 @@
 return {
   {
-    "nvim-telescope/telescope-ui-select.nvim",
-  },
-  {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.5",
+    cmd = "Telescope",
+    version = false,
+    lazy = true,
     dependencies = {
       "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+      "nvim-telescope/telescope-ui-select.nvim",
     },
     config = function()
-      require("telescope").setup({
+      local telescope = require("telescope")
+      local actions = require("telescope.actions")
+      local trouble = require("trouble.sources.telescope")
+      local icons = require("config.icons")
+
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "TelescopeResults",
+        callback = function(ctx)
+          vim.api.nvim_buf_call(ctx.buf, function()
+            vim.fn.matchadd("TelescopeParent", "\t\t.*$")
+            vim.api.nvim_set_hl(0, "TelescopeParent", { link = "Comment" })
+          end)
+        end,
+      })
+
+      telescope.setup({
+        file_ignore_patterns = { "%.git/." },
+        defaults = {
+          mappings = {
+            i = {
+              ["<esc>"] = actions.close,
+              ["<C-q>"] = actions.close,
+              ["<C-t>"] = trouble.open,
+              ["<C-u>"] = false,
+            },
+            n = { ["<C-t>"] = trouble.open },
+          },
+          path_display = {
+            "filename_first",
+          },
+          previewer = false,
+          prompt_prefix = " " .. icons.ui.Telescope .. " ",
+          selection_caret = icons.ui.BoldArrowRight .. " ",
+          file_ignore_patterns = { "node_modules" },
+          initial_mode = "insert",
+          select_strategy = "reset",
+          sorting_strategy = "ascending",
+          color_devicons = true,
+          set_env = { ["COLORTERM"] = "truecolor" },
+          layout_config = {
+            prompt_position = "top",
+            preview_cutoff = 120,
+          },
+          vimgrep_arguments = {
+            "rg",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+            "--hidden",
+            "--glob=!.git/",
+          },
+        },
+        pickers = {
+          find_files = {
+            previewer = false,
+            layout_config = {
+              height = 0.4,
+              prompt_position = "top",
+              preview_cutoff = 120,
+            },
+          },
+          git_files = {
+            previewer = false,
+            layout_config = {
+              height = 0.4,
+              prompt_position = "top",
+              preview_cutoff = 120,
+            },
+          },
+          buffers = {
+            mappings = {
+              i = {
+                ["<c-d>"] = actions.delete_buffer,
+              },
+              n = {
+                ["<c-d>"] = actions.delete_buffer,
+              },
+            },
+            previewer = false,
+            initial_mode = "normal",
+            layout_config = {
+              height = 0.4,
+              width = 0.6,
+              prompt_position = "top",
+              preview_cutoff = 120,
+            },
+          },
+          current_buffer_fuzzy_find = {
+            previewer = true,
+            layout_config = {
+              prompt_position = "top",
+              preview_cutoff = 120,
+            },
+          },
+          live_grep = {
+            only_sort_text = true,
+            previewer = true,
+          },
+          grep_string = {
+            only_sort_text = true,
+            previewer = true,
+          },
+          lsp_references = {
+            show_line = false,
+            previewer = true,
+          },
+          treesitter = {
+            show_line = false,
+            previewer = true,
+          },
+          colorscheme = {
+            enable_preview = true,
+          },
+        },
         extensions = {
+          fzf = {
+            fuzzy = true, -- false will only do exact matching
+            override_generic_sorter = true, -- override the generic sorter
+            override_file_sorter = true, -- override the file sorter
+            case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+          },
           ["ui-select"] = {
             require("telescope.themes").get_dropdown({
               previewer = false,
@@ -28,12 +152,16 @@ return {
           },
         },
       })
-      local builtin = require("telescope.builtin")
 
-      vim.keymap.set("n", "<C-p>", builtin.find_files, {})
-      vim.keymap.set("n", "<leader>p", builtin.live_grep, {})
+      telescope.load_extension("fzf")
+      telescope.load_extension("ui-select")
 
-      require("telescope").load_extension("ui-select")
+      vim.keymap.set("n", "<C-f>", ":Telescope current_buffer_fuzzy_find<CR>", {})
+      vim.keymap.set("n", "<C-p>", ":Telescope git_files<CR>", {})
+      vim.keymap.set("n", "<leader>b", ":Telescope buffers<CR>", {})
+      vim.keymap.set("n", "<leader>p", ":Telescope live_grep<CR>", {})
+      vim.keymap.set("n", "gd", ":Telescope lsp_definitions<CR>", {})
+      vim.keymap.set("n", "<leader>r", ":Telescope lsp_references<CR>", {})
     end,
   },
 }
