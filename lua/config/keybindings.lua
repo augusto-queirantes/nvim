@@ -40,14 +40,8 @@ map_key("n", "<S-tab>", "<<")
 map_key("v", "<tab>", ">gv")
 map_key("v", "<S-tab>", "<gv")
 
--- Ident entire file
--- map_key("n", "===", "mxgg=G`x")
-
 -- Ctrl-a
-map_key("n", "<C-a>", "ggvG")
-
--- Source vim configurations
-map_key("n", "<leader>so", ":so ~/.config/nvim/init.lua<cr>")
+map_key("n", "<C-a>", "gg0vG$")
 
 -- Move entire line of text
 map_key("n", "<M-j>", "mz:m+<cr>`z")
