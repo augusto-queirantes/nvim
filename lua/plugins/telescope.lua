@@ -157,7 +157,7 @@ return {
 			telescope.load_extension("ui-select")
 
 			vim.keymap.set("n", "<C-f>", ":Telescope current_buffer_fuzzy_find<CR>", {})
-			vim.keymap.set("n", "<C-p>", ":Telescope git_files<CR>", {})
+			vim.keymap.set("n", "<C-p>", ":Telescope find_files<CR>", {})
 			vim.keymap.set("n", "<leader>b", ":Telescope buffers<CR>", {})
 			vim.keymap.set("n", "<leader>p", ":Telescope live_grep<CR>", {})
 			vim.keymap.set("n", "gd", ":Telescope lsp_definitions<CR>", {})
