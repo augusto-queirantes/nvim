@@ -11,7 +11,7 @@ vim_options.smarttab = true
 vim_options.lbr = true
 vim_options.tw = 1000
 
--- Identation
+-- Indentation
 vim_options.autoindent = true
 vim_options.smartindent = true
 
