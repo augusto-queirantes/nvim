@@ -1,5 +1,5 @@
 local function map_key(mode, key_to_bind, action_to_execute)
-  vim.keymap.set(mode, key_to_bind, action_to_execute)
+	vim.keymap.set(mode, key_to_bind, action_to_execute)
 end
 
 -- Copy
