@@ -15,3 +15,9 @@ map_key("n", "<C-q>", ":q<CR>")
 
 -- Fast save
 map_key("n", "<C-s>", ":w<CR>")
+
+-- Shift block down
+map_key("v", "J", ":m '>+1<CR>gv=gv")
+
+-- Shift block up
+map_key("v", "K", ":m '<-2<CR>gv=gv")
